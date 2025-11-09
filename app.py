@@ -14,6 +14,7 @@ def get_balance(address):
     if not w3.is_connected():
         print("❌ Connection to RPC failed.")
         sys.exit(1)
+        print("🌐 Connected to network:", w3.eth.chain_id)
     balance_wei = w3.eth.get_balance(Web3.to_checksum_address(address))
     return balance_wei
 
